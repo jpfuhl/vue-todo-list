@@ -13,7 +13,8 @@ const router = createRouter({
       name: 'archive',
       component: () => import('../views/ArchiveView.vue')
     },
-  ]
+  ],
+  linkActiveClass: 'nav-link-active',
 })
 
 export default router
