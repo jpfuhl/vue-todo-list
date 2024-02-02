@@ -5,13 +5,11 @@ const user = {
   name: "Max Mustermann",
   initials: "M. M.",
 };
-
-
 </script>
 
 <template>
   <header>
-    <nav>
+    <nav class="max-width-container">
       <div class="nav-link-container">
         <RouterLink class="nav-link" to="/">My Tasks</RouterLink>
         <RouterLink class="nav-link" to="/archive">Archive</RouterLink>
@@ -26,12 +24,15 @@ const user = {
 </template>
 
 <style scoped>
+header {
+  background-color: #f2f2f2;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #f2f2f2;
+  padding-block: 20px;
 }
 
 .nav-link-container {
