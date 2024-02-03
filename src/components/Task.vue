@@ -1,35 +1,25 @@
 <template>
-  <div class="card" :class="{ completed: props.task.completed }">
+  <div class="card" :class="{ completed: task.completed }">
     <input type="checkbox" v-model="status" />
-    <p>{{ props.task.title }}</p>
-
-    <!-- <p v-if="!edit">{{ task.title }}</p> -->
-    <!-- <input v-else type="text" v-model="task.title" /> -->
-
-    <!-- <button class="delete-button">X</button> -->
-    <!-- <button class="edit-button" @click="toggleEditMode">O</button> -->
+    <p>{{ task.title }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Task } from "@/types/task";
+import type { TTask } from "@/types/task";
 import { useTaskStore } from "@/stores/TaskStore";
-import { defineProps, computed } from "vue";
+import { computed } from "vue";
 
 const taskStore = useTaskStore();
 
 const props = defineProps<{
-  task: Task;
+  task: TTask;
 }>();
 
 const status = computed({
   get: () => props.task.completed,
   set: () => taskStore.changeTaskStatus(props.task.id),
 });
-
-// const toggleEditMode = () => {
-//   edit.value = !edit.value;
-// };
 </script>
 
 <style scoped>

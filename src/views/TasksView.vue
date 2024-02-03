@@ -1,37 +1,29 @@
 <template>
-  <div>
-    <section class="max-width-container">
+  <div class="max-width-container">
+    <div>
       <h2>Add new Task</h2>
-      <form @submit.prevent="handleSubmit()">
-        <input
-          type="text"
-          placeholder="Enter a new task..."
-          v-model="input"
-          required
-        />
-        <button type="submit">+ ADD</button>
-      </form>
-    </section>
+      <AddTaskForm />
+    </div>
 
-    <TaskContainer :tasks="uncompletedTasks" :completed="false" />
-
+    <div>
+      <h2>
+        Your open Tasks <span>({{ uncompletedTasks.length }})</span>
+      </h2>
+      <Searchbar />
+      <TaskContainer :tasks="uncompletedTasks" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import AddTaskForm from "@/components/AddTaskForm.vue";
+import Searchbar from "@/components/Searchbar.vue";
 import TaskContainer from "@/components/TaskContainer.vue";
 import { useTaskStore } from "@/stores/TaskStore";
-import { ref, computed } from "vue";
+import { computed } from "vue";
 
 const taskStore = useTaskStore();
 const uncompletedTasks = computed(() => taskStore.getUncompletedTasks);
-
-const input = ref("");
-
-const handleSubmit = () => {
-  taskStore.addTask(input.value);
-  input.value = "";
-};
 </script>
 
 <style scoped>

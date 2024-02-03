@@ -31,11 +31,9 @@ watch(
 // Initial fetch of n tasks from API
 const taskStore = useTaskStore();
 taskStore.fetchTasks(10);
-
 </script>
 
 <style scoped>
-/* Slide and fade in from right */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,

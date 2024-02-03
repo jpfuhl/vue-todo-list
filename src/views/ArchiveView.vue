@@ -1,5 +1,11 @@
 <template>
-  <TaskContainer :tasks="completedTasks" :completed="true" />
+  <div class="max-width-container">
+    <h2>
+      Your completed Tasks <span>({{ completedTasks.length }})</span>
+    </h2>
+    <Searchbar />
+    <TaskContainer :tasks="completedTasks" />
+  </div>
 </template>
 
 <script setup lang="ts">

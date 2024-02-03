@@ -1,13 +1,13 @@
-import type { Task } from "@/types/task";
+import type { TTask } from "@/types/task";
 import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore("taskStore", {
   state: () => ({
-    tasks: <Task[]>[],
+    tasks: <TTask[]>[],
     searchValue: "",
   }),
   getters: {
-    getUncompletedTasks(): Task[] {
+    getUncompletedTasks(): TTask[] {
       if (this.searchValue) {
         return this.tasks
           .filter(
@@ -20,7 +20,7 @@ export const useTaskStore = defineStore("taskStore", {
       }
       return this.tasks.filter((task) => !task.completed).reverse();
     },
-    getCompletedTasks(): Task[] {
+    getCompletedTasks(): TTask[] {
       if (this.searchValue) {
         return this.tasks
           .filter(
@@ -42,12 +42,11 @@ export const useTaskStore = defineStore("taskStore", {
         const data = await res.json();
         this.tasks = data.slice(0, n);
       } catch (error) {
-        console.error(error);
+        console.error(`Error while fetching tasks from API: ${error}`);
       }
     },
     addTask(title: string) {
       const maxId = Math.max(...this.tasks.map((task) => task.id));
-      console.log(maxId + 1);
       this.tasks.push({
         id: maxId + 1,
         userId: 1,

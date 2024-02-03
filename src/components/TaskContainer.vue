@@ -1,39 +1,22 @@
 <template>
-  <section class="max-width-container">
-    <h2 v-if="completed">
-      Your completed Tasks <span>({{ tasks.length }})</span>
-    </h2>
-    <h2 v-else>
-      Your open Tasks <span>({{ tasks.length }})</span>
-    </h2>
+  <div class="task-container" v-if="tasks.length">
+    <TaskComponent v-for="task in tasks" :key="task.id" :task="task" />
+  </div>
 
-    <input
-      type="text"
-      placeholder="Search for a task..."
-      v-model="taskStore.searchValue"
-    />
-
-    <div class="task-container" v-if="tasks.length">
-      <TaskComponent v-for="task in tasks" :key="task.id" :task="task" />
-    </div>
-
-    <div v-else>
-      <p>No tasks available</p>
-    </div>
-  </section>
+  <div v-else>
+    <p>No tasks available</p>
+  </div>
 </template>
 
 <script setup lang="ts">
-import type { Task } from "@/types/task";
+import type { TTask } from "@/types/task";
 import TaskComponent from "@/components/Task.vue";
 import { useTaskStore } from "@/stores/TaskStore";
-import { defineProps } from "vue";
 
 const taskStore = useTaskStore();
 
 const props = defineProps<{
-  tasks: Task[];
-  completed: boolean;
+  tasks: TTask[];
 }>();
 </script>
 
