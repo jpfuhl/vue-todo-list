@@ -8,15 +8,30 @@ export const useTaskStore = defineStore("taskStore", {
   }),
   getters: {
     getUncompletedTasks(): Task[] {
+      if (this.searchValue) {
+        return this.tasks
+          .filter(
+            (task) =>
+              task.title
+                .toLowerCase()
+                .includes(this.searchValue.toLowerCase()) && !task.completed
+          )
+          .reverse();
+      }
       return this.tasks.filter((task) => !task.completed).reverse();
     },
     getCompletedTasks(): Task[] {
+      if (this.searchValue) {
+        return this.tasks
+          .filter(
+            (task) =>
+              task.title
+                .toLowerCase()
+                .includes(this.searchValue.toLowerCase()) && task.completed
+          )
+          .reverse();
+      }
       return this.tasks.filter((task) => task.completed).reverse();
-    },
-    getTaskBySearch(): Task[] {
-      return this.tasks.filter((task) =>
-        task.title.toLowerCase().includes(this.searchValue.toLowerCase())
-      );
     },
   },
   actions: {

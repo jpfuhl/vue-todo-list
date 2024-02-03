@@ -2,7 +2,7 @@
   <div>
     <section class="max-width-container">
       <h2>Add new Task</h2>
-      <form @submit.prevent="taskStore.addTask(input)">
+      <form @submit.prevent="handleSubmit()">
         <input
           type="text"
           placeholder="Enter a new task..."
@@ -15,13 +15,17 @@
 
     <section class="max-width-container">
       <h2>
-        Your open Tasks <span>({{ tasks.length }})</span>
+        Your open Tasks <span>({{ uncompletedTasks.length }})</span>
       </h2>
-      <input type="text" placeholder="Search for a task..." />
+      <input
+        type="text"
+        placeholder="Search for a task..."
+        v-model="taskStore.searchValue"
+      />
 
-      <div class="task-container" v-if="tasks.length">
+      <div class="task-container" v-if="uncompletedTasks.length">
         <TaskComponent
-          v-for="task in tasks"
+          v-for="task in uncompletedTasks"
           :key="task.id"
           :task="task"
           @changeTaskStatus="taskStore.changeTaskStatus(task.id)"
@@ -41,9 +45,14 @@ import { useTaskStore } from "@/stores/TaskStore";
 import { ref, computed } from "vue";
 
 const taskStore = useTaskStore();
-const tasks = computed(() => taskStore.getUncompletedTasks);
+const uncompletedTasks = computed(() => taskStore.getUncompletedTasks);
 
 const input = ref("");
+
+const handleSubmit = () => {
+  taskStore.addTask(input.value);
+  input.value = "";
+};
 
 // const addTask = () => {
 //   const newTask: Task = {
