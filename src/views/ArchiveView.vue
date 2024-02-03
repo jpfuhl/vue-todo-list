@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import Searchbar from "@/components/Searchbar.vue";
 import TaskContainer from "@/components/TaskContainer.vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { computed } from "vue";
