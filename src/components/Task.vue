@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{ completed: props.task.completed }">
     <input type="checkbox" v-model="status" />
     <p>{{ props.task.title }}</p>
 
@@ -13,17 +13,18 @@
 
 <script setup lang="ts">
 import type { Task } from "@/types/task";
-import { defineProps, computed, defineEmits } from "vue";
+import { useTaskStore } from "@/stores/TaskStore";
+import { defineProps, computed } from "vue";
+
+const taskStore = useTaskStore();
 
 const props = defineProps<{
   task: Task;
 }>();
 
-const emit = defineEmits(["changeTaskStatus"]);
-
 const status = computed({
   get: () => props.task.completed,
-  set: () => emit("changeTaskStatus", { taskId: props.task.id }),
+  set: () => taskStore.changeTaskStatus(props.task.id),
 });
 
 // const toggleEditMode = () => {
@@ -42,6 +43,10 @@ const status = computed({
   background: #0cebeb;
   background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
   background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
+}
+
+.completed {
+  filter: grayscale(100%);
 }
 
 /* .delete-button {

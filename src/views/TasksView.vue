@@ -13,34 +13,13 @@
       </form>
     </section>
 
-    <section class="max-width-container">
-      <h2>
-        Your open Tasks <span>({{ uncompletedTasks.length }})</span>
-      </h2>
-      <input
-        type="text"
-        placeholder="Search for a task..."
-        v-model="taskStore.searchValue"
-      />
+    <TaskContainer :tasks="uncompletedTasks" :completed="false" />
 
-      <div class="task-container" v-if="uncompletedTasks.length">
-        <TaskComponent
-          v-for="task in uncompletedTasks"
-          :key="task.id"
-          :task="task"
-          @changeTaskStatus="taskStore.changeTaskStatus(task.id)"
-        />
-      </div>
-
-      <div v-else>
-        <p>No tasks available</p>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import TaskComponent from "@/components/Task.vue";
+import TaskContainer from "@/components/TaskContainer.vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { ref, computed } from "vue";
 
@@ -53,17 +32,6 @@ const handleSubmit = () => {
   taskStore.addTask(input.value);
   input.value = "";
 };
-
-// const addTask = () => {
-//   const newTask: Task = {
-//     id: tasks.value.length + 1,
-//     userId: 1,
-//     title: input.value,
-//     completed: false,
-//   };
-//   tasks.value.push(newTask);
-//   input.value = "";
-// };
 </script>
 
 <style scoped>
