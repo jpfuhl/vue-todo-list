@@ -1,5 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Task from '@/components/Task.vue';
+</script>
 
 <template>
-  <h1>Archive</h1>
+  <section class="max-width-container">
+    <!-- <Task /> -->
+  </section>
 </template>

@@ -1,23 +1,3 @@
-<script setup lang="ts">
-import { Transition, watch, ref } from "vue";
-import { useRoute, RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-
-const route = useRoute();
-const transitionName = ref("");
-
-watch(
-  () => route.path,
-  (to, from) => {
-    transitionName.value =
-      to === "/archive" && from === "/" ? "slide-left" : "slide-right";
-    console.log(transitionName.value);
-  }
-);
-
-// maybe fetch here and save in pinia store
-</script>
-
 <template>
   <Navbar />
   <main>
@@ -28,6 +8,31 @@ watch(
     </RouterView>
   </main>
 </template>
+
+<script setup lang="ts">
+import Navbar from "@/components/Navbar.vue";
+import { ref, watch, Transition } from "vue";
+import { useRoute, RouterView } from "vue-router";
+import { useTaskStore } from "@/stores/TaskStore";
+
+const route = useRoute();
+const transitionName = ref("");
+
+// Changing transition based on route
+watch(
+  () => route.path,
+  (to, from) => {
+    transitionName.value =
+      to === "/archive" && from === "/" ? "slide-left" : "slide-right";
+    console.log(transitionName.value);
+  }
+);
+
+// Initial fetch of n tasks from API
+const taskStore = useTaskStore();
+taskStore.fetchTasks(10);
+
+</script>
 
 <style scoped>
 /* Slide and fade in from right */
