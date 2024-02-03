@@ -15,7 +15,7 @@ const user = {
         <RouterLink class="nav-link" to="/archive">Archive</RouterLink>
       </div>
       <div class="user-container">
-        <div class="circle"></div>
+        <font-awesome-icon icon="fa-solid fa-user" class="icon" />
         <p>{{ user.name }}</p>
         <!-- <p>M. M.</p> -->
       </div>
@@ -58,14 +58,12 @@ nav {
 
 .user-container {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 
-.circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: blue;
+.icon {
+  font-size: 1.25rem;
+  color: rgb(0, 0, 0);
 }
 </style>
