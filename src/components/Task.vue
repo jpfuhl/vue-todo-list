@@ -49,12 +49,17 @@ const status = computed({
   scale: 0.99;
 }
 
-input[type="checkbox"] {
-  transform: scale(1.5);
-  cursor: pointer;
+p {
+  max-width: 70%;
+  word-break: break-all;
 }
 
-.completed {
-  filter: grayscale(100%);
+input[type="checkbox"] {
+  width: 1.75rem;
+  height: 1.75rem;
 }
+
+/* .completed {
+  filter: grayscale(100%);
+} */
 </style>
