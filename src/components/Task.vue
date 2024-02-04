@@ -1,7 +1,7 @@
 <template>
   <div class="card" :class="{ completed: task.completed }">
     <input type="checkbox" v-model="status" />
-    <p>{{ task.title }}</p>
+    <p>{{ truncatedTitle }}</p>
   </div>
 </template>
 
@@ -19,6 +19,12 @@ const props = defineProps<{
 const status = computed({
   get: () => props.task.completed,
   set: () => taskStore.changeTaskStatus(props.task.id),
+});
+
+const truncatedTitle = computed(() => {
+  return props.task.title.length > 50
+    ? props.task.title.slice(0, 47) + " ..."
+    : props.task.title;
 });
 </script>
 
@@ -52,6 +58,8 @@ const status = computed({
 p {
   max-width: 70%;
   word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 input[type="checkbox"] {
