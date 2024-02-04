@@ -51,12 +51,8 @@ const truncatedTitle = computed(() => {
   scale: 1.02;
 }
 
-.card:active {
-  scale: 0.99;
-}
-
 p {
-  max-width: 70%;
+  max-width: 80%;
   word-break: break-all;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -69,5 +65,11 @@ input[type="checkbox"] {
 
 .completed {
   filter: grayscale(100%);
+}
+
+@media (min-width: 640px) {
+  p {
+    max-width: 70%;
+  }
 }
 </style>
