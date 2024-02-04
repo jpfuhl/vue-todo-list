@@ -6,6 +6,7 @@
 }
 
 h2 {
+  cursor: default;
   color: rgb(0, 0, 0, 0.75);
   font-size: 1.25rem;
   margin-left: 0.1rem;

@@ -52,6 +52,7 @@ const truncatedTitle = computed(() => {
 }
 
 p {
+  cursor: default;
   max-width: 80%;
   word-break: break-all;
   overflow: hidden;
@@ -59,6 +60,7 @@ p {
 }
 
 input[type="checkbox"] {
+  cursor: pointer;
   width: 1.75rem;
   height: 1.75rem;
 }

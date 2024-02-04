@@ -79,6 +79,7 @@ nav {
 }
 
 p {
+  cursor: default;
   font-size: 1.25rem;
   color: rgb(0, 0, 0, 0.5);
 }
