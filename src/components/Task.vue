@@ -1,7 +1,9 @@
 <template>
   <div class="card" :class="{ completed: task.completed }">
     <input type="checkbox" v-model="status" />
-    <p>{{ truncatedTitle }}</p>
+    <p :title="isTruncated ? task.title : ''">
+      {{ isTruncated ? truncatedTitle : task.title }}
+    </p>
   </div>
 </template>
 
@@ -21,10 +23,12 @@ const status = computed({
   set: () => taskStore.changeTaskStatus(props.task.id),
 });
 
+const isTruncated = computed(() => {
+  return props.task.title.length > 68;
+});
+
 const truncatedTitle = computed(() => {
-  return props.task.title.length > 50
-    ? props.task.title.slice(0, 47) + " ..."
-    : props.task.title;
+  return isTruncated.value ? props.task.title.slice(0, 65) + " ..." : "";
 });
 </script>
 
@@ -53,7 +57,7 @@ const truncatedTitle = computed(() => {
 
 p {
   cursor: default;
-  max-width: 80%;
+  max-width: 70%;
   word-break: break-all;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,11 +71,5 @@ input[type="checkbox"] {
 
 .completed {
   filter: grayscale(100%);
-}
-
-@media (min-width: 640px) {
-  p {
-    max-width: 70%;
-  }
 }
 </style>
