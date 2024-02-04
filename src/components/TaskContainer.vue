@@ -33,6 +33,7 @@ section {
 }
 
 .empty-container {
+  cursor: default;
   display: flex;
   place-content: center;
   margin-block: 2rem;
