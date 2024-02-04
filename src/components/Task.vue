@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="{ completed: task.completed }">
+  <div class="card">
     <input type="checkbox" v-model="status" />
     <p :title="isTruncated ? task.title : ''">
       {{ isTruncated ? truncatedTitle : task.title }}
@@ -41,24 +41,13 @@ const truncatedTitle = computed(() => {
   padding-left: 2rem;
   padding-right: 1rem;
   border-radius: 8px;
-  background: var(--teal);
-  background: -webkit-linear-gradient(
-    135deg,
-    #a0f0f2 0%,
-    #66d9d9 50%,
-    var(--teal) 100%
-  );
-  background: linear-gradient(
-    135deg,
-    #dbf8f8 0%,
-    #a8eeee 50%,
-    var(--teal) 100%
-  );
+  box-shadow: 0 4px 12px 0 rgba(234, 234, 234, 0.7);
   transition: all 0.2s ease-in-out;
 }
 
 .card:hover {
   scale: 1.02;
+  box-shadow: 0 4px 14px 0 rgba(255, 46, 99, 0.7);
 }
 
 p {
@@ -72,14 +61,15 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   width: 1.75rem;
   height: 1.75rem;
-  border: 2px solid var(--dark-grey);
+  border: 2px solid var(--grey);
   cursor: pointer;
   position: relative;
   border-radius: 8px;
 }
 
 input[type="checkbox"]:checked {
-  background-color: var(--dark-grey);
+  border: 2px solid var(--red);
+  background-color: var(--red);
 }
 
 input[type="checkbox"]:checked:after {
@@ -92,9 +82,5 @@ input[type="checkbox"]:checked:after {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.completed {
-  filter: grayscale(100%);
 }
 </style>
