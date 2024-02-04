@@ -32,10 +32,9 @@ const handleSubmit = () => {
 
 form {
   display: flex;
-  align-items: flex-end;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.9rem;
 }
-
 .input-wrapper {
   flex-grow: 1;
 }
@@ -45,7 +44,7 @@ button {
   background-color: blue;
   font-size: 1.25rem;
   font-weight: bold;
-  padding: 0.2rem 1rem;
+  padding: 0.6rem 1rem;
   border: none;
   border-radius: 4px;
   transition: all 0.1s ease-in-out;
@@ -58,5 +57,17 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+@media (min-width: 640px) {
+  form {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  button {
+    padding: 0.2rem 1rem;
+  }
 }
 </style>
