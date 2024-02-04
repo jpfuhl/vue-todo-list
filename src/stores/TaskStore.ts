@@ -55,8 +55,11 @@ export const useTaskStore = defineStore("taskStore", {
     },
     changeTaskStatus(taskId: number) {
       const index = this.tasks.findIndex((task) => task.id === taskId);
-      if (index !== -1)
-        this.tasks[index].completed = !this.tasks[index].completed;
+      if (index !== -1) {
+        setTimeout(() => {
+          this.tasks[index].completed = !this.tasks[index].completed;
+        }, 200);
+      }
     },
   },
 });
