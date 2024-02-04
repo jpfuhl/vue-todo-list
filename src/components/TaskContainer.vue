@@ -3,7 +3,7 @@
     <TaskComponent v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 
-  <div v-else>
+  <div class="empty-container" v-else>
     <p>No tasks available</p>
   </div>
 </template>
@@ -33,6 +33,20 @@ section {
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   margin-block: 2rem;
+}
+
+.empty-container {
+  display: flex;
+  place-content: center;
+  margin-block: 2rem;
+  padding-block: 4rem;
+}
+
+.empty-container p {
+  place-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.2);
 }
 
 @media (min-width: 640px) {
