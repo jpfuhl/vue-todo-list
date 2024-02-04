@@ -1,9 +1,9 @@
 <template>
-  <div class="task-container" v-if="tasks.length">
+  <div v-if="tasks.length" class="task-container">
     <TaskComponent v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 
-  <div class="empty-container" v-else>
+  <div v-else class="empty-container">
     <p>No tasks available</p>
   </div>
 </template>
