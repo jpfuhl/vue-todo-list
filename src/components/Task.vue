@@ -24,11 +24,11 @@ const status = computed({
 });
 
 const isTruncated = computed(() => {
-  return props.task.title.length > 68;
+  return props.task.title.length > 67;
 });
 
 const truncatedTitle = computed(() => {
-  return isTruncated.value ? props.task.title.slice(0, 65) + " ..." : "";
+  return isTruncated.value ? props.task.title.slice(0, 64) + " ..." : "";
 });
 </script>
 
@@ -56,6 +56,7 @@ const truncatedTitle = computed(() => {
 }
 
 p {
+  color: rgb(92, 92, 92);
   cursor: default;
   max-width: 70%;
   word-break: break-all;
