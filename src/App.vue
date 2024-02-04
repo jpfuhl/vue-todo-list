@@ -27,9 +27,9 @@ watch(
   }
 );
 
-// Initial fetch of n tasks from API
+// Initial fetch of tasks from API
 const taskStore = useTaskStore();
-taskStore.fetchTasks(100);
+taskStore.fetchTasks();
 </script>
 
 <style scoped>
