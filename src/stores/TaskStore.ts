@@ -58,7 +58,7 @@ export const useTaskStore = defineStore("taskStore", {
       if (index !== -1) {
         setTimeout(() => {
           this.tasks[index].completed = !this.tasks[index].completed;
-        }, 200);
+        }, 50);
       }
     },
   },
