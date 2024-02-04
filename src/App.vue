@@ -34,10 +34,6 @@ taskStore.fetchTasks(10);
 </script>
 
 <style scoped>
-body {
-  overflow-x: hidden;
-}
-
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
