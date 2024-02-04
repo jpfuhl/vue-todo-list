@@ -1,10 +1,10 @@
 # Vue To-Do List
 
-This is a simple To-Do List application built with Vue 3 and TypeScript. It's a portfolio piece demonstrating my ability to create a modern, interactive web application.
+This is a simple To-Do List application built with Vue 3 and TypeScript. It's a portfolio piece demonstrating my ability to create a modern, interactive web application. The initial tasks are fetched from the [JSON Placeholder API](https://jsonplaceholder.typicode.com/), and you also have the possibility to add your own tasks.
 
 ## Live Demo
 
-The application is deployed on Vercel and can be accessed at [https://vue-todo-list-kappa.vercel.app/](https://vue-todo-list-kappa.vercel.app/).
+The application is deployed on Vercel and can be accessed at [vue-todo-list-kappa.vercel.app](https://vue-todo-list-kappa.vercel.app/).
 
 ## Project Structure
 
