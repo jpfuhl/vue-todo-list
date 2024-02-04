@@ -10,7 +10,7 @@
       />
       <div class="input-line"></div>
     </div>
-    <button type="submit">+ ADD</button>
+    <button type="submit">+</button>
   </form>
 </template>
 
@@ -29,4 +29,30 @@ const handleSubmit = () => {
 
 <style scoped>
 @import "@/assets/input.css";
+
+form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+button {
+  color: white;
+  background-color: blue;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
+}
+
+button:active {
+  transform: scale(0.95);
+}
 </style>
