@@ -1,40 +1,48 @@
-# ./
+# Vue To-Do List
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple To-Do List application built with Vue 3 and TypeScript. It's a portfolio piece demonstrating my ability to create a modern, interactive web application.
 
-## Recommended IDE Setup
+## Live Demo
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+The application is deployed on Vercel and can be accessed at [https://vue-todo-list-kappa.vercel.app/](https://vue-todo-list-kappa.vercel.app/).
 
-## Type Support for `.vue` Imports in TS
+## Project Structure
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- `src/`: Contains the main application code.
+  - `App.vue`: The main Vue component.
+  - `assets/`: Contains CSS files for styling the application.
+  - `components/`: Contains Vue components used in the application.
+  - `main.ts`: The entry point for the application.
+  - `router/`: Contains the Vue Router configuration.
+  - `stores/`: Contains the Pinia store for managing application state.
+  - `types/`: Contains TypeScript type definitions.
+  - `views/`: Contains Vue components that represent entire pages.
+- `public/`: Contains public assets that will be served directly by the server.
+- `vite.config.ts`: Contains configuration for Vite, the build tool used in this project.
+- `tsconfig.json`: Contains configuration for the TypeScript compiler.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Getting Started
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. Clone the repository:
 
-## Customize configuration
+`sh git clone https://github.com/jpfuhl/vue-todo-list.git`
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+2. Install the dependencies:
 
-## Project Setup
+`npm install`
 
-```sh
-npm install
-```
+3. Start the development server:
 
-### Compile and Hot-Reload for Development
+`npm run dev`
 
-```sh
-npm run dev
-```
+## Building for Production
 
-### Type-Check, Compile and Minify for Production
+To create a production build, run the following command:
 
-```sh
-npm run build
-```
+`npm run build`
+
+This will create a dist/ directory with the production-ready files.
+
+## Note
+
+This project is a portfolio piece and is not intended for other contributors. If you'd like to reference this project, please attribute it to me.
