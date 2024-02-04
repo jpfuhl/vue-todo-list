@@ -1,18 +1,20 @@
 <template>
-  <div class="max-width-container">
-    <div>
+  <section class="max-width-container">
+    <div class="add-task-wrapper">
       <h2>Add new Task</h2>
       <AddTaskForm />
     </div>
 
-    <div>
+    <div class="search-task-wrapper">
       <h2>
-        Your open Tasks <span>({{ uncompletedTasks.length }})</span>
+        Your open Tasks
+        <span class="task-count">{{ uncompletedTasks.length }}</span>
       </h2>
       <Searchbar />
-      <TaskContainer :tasks="uncompletedTasks" />
     </div>
-  </div>
+
+    <TaskContainer :tasks="uncompletedTasks" />
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -27,10 +29,5 @@ const uncompletedTasks = computed(() => taskStore.getUncompletedTasks);
 </script>
 
 <style scoped>
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
+@import "@/assets/view.css";
 </style>

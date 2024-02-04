@@ -1,11 +1,15 @@
 <template>
-  <div class="max-width-container">
-    <h2>
-      Your completed Tasks <span>({{ completedTasks.length }})</span>
-    </h2>
-    <Searchbar />
+  <section class="max-width-container">
+    <div class="search-task-wrapper">
+      <h2>
+        Your completed Tasks
+        <span class="task-count">{{ completedTasks.length }}</span>
+      </h2>
+      <Searchbar />
+    </div>
+
     <TaskContainer :tasks="completedTasks" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -17,3 +21,7 @@ import { computed } from "vue";
 const taskStore = useTaskStore();
 const completedTasks = computed(() => taskStore.getCompletedTasks);
 </script>
+
+<style scoped>
+@import "@/assets/view.css";
+</style>

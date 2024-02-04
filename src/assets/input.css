@@ -42,3 +42,9 @@
 .input-field:focus + .input-line:after {
   transform: scaleX(1);
 }
+
+@media (min-width: 640px) {
+  .input-wrapper {
+    max-width: 310px;
+  }
+}

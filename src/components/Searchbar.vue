@@ -9,7 +9,6 @@
       />
       <div class="input-line"></div>
     </div>
-    <font-awesome-icon icon="magnifying-glass" class="icon" />
   </div>
 </template>
 
@@ -30,7 +29,7 @@ const taskStore = useTaskStore();
 }
 
 .input-wrapper {
-  /* flex-grow: 1; */
+  flex-grow: 1;
 }
 
 .icon {

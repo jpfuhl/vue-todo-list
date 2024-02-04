@@ -7,9 +7,9 @@ import { createPinia } from "pinia";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faClock, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUser, faClock, faMagnifyingGlass);
+library.add(faUser);
 
 const app = createApp(App);
 

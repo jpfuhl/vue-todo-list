@@ -36,6 +36,10 @@ form {
   gap: 0.75rem;
 }
 
+.input-wrapper {
+  flex-grow: 1;
+}
+
 button {
   color: white;
   background-color: blue;

@@ -59,7 +59,7 @@ input[type="checkbox"] {
   height: 1.75rem;
 }
 
-/* .completed {
+.completed {
   filter: grayscale(100%);
-} */
+}
 </style>

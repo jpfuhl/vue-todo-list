@@ -37,7 +37,6 @@ export const useTaskStore = defineStore("taskStore", {
   actions: {
     async fetchTasks(n: number = 200) {
       try {
-        console.log("fetching tasks");
         const res = await fetch("https://jsonplaceholder.typicode.com/todos");
         const data = await res.json();
         this.tasks = data.slice(0, n);

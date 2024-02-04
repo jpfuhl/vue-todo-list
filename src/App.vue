@@ -24,13 +24,12 @@ watch(
   (to, from) => {
     transitionName.value =
       to === "/archive" && from === "/" ? "slide-left" : "slide-right";
-    console.log(transitionName.value);
   }
 );
 
 // Initial fetch of n tasks from API
 const taskStore = useTaskStore();
-taskStore.fetchTasks(10);
+taskStore.fetchTasks(100);
 </script>
 
 <style scoped>
