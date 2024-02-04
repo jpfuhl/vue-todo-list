@@ -10,7 +10,7 @@
       />
       <div class="input-line"></div>
     </div>
-    <button type="submit">+</button>
+    <button type="submit">Add</button>
   </form>
 </template>
 
@@ -43,7 +43,6 @@ button {
   color: white;
   background-color: blue;
   font-size: 1.25rem;
-  font-weight: bold;
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 4px;
