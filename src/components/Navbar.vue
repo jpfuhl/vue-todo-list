@@ -8,7 +8,7 @@
       <div class="user-container">
         <font-awesome-icon icon="fa-solid fa-user" class="icon" />
         <p class="user-name">{{ user.name }}</p>
-        <p class="user-initials">M. M.</p>
+        <p class="user-initials">{{ user.initials }}</p>
       </div>
     </nav>
   </header>
@@ -43,7 +43,7 @@ nav {
 
 .nav-link-container {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
@@ -64,7 +64,7 @@ nav {
 
 .user-container {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
@@ -90,6 +90,16 @@ p {
 
 .user-name {
   display: none;
+}
+
+@media (min-width: 425px) {
+  .nav-link-container {
+    gap: 2.5rem;
+  }
+
+  .user-container {
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 640px) {
