@@ -40,8 +40,8 @@ form {
 }
 
 button {
-  color: white;
-  background-color: blue;
+  color: var(--white);
+  background-color: var(--red);
   font-size: 1.25rem;
   padding: 0.6rem 1rem;
   border: none;
@@ -51,7 +51,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
 }
 
 button:active {

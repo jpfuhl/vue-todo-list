@@ -6,7 +6,7 @@
         <RouterLink class="nav-link" to="/archive">Archive</RouterLink>
       </div>
       <div class="user-container">
-        <font-awesome-icon icon="fa-solid fa-user" class="icon" />
+        <font-awesome-icon icon="fa-solid fa-user" />
         <p class="user-name">{{ user.name }}</p>
         <p class="user-initials">{{ user.initials }}</p>
       </div>
@@ -30,8 +30,8 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--black);
+  box-shadow: 0 4px 12px 0 rgba(37, 42, 52, 0.5);
 }
 
 nav {
@@ -50,38 +50,26 @@ nav {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: rgb(0, 0, 0, 0.5);
+  color: var(--dark-grey);
   transition: color 0.3s ease-in-out;
 }
 
-.nav-link:hover {
-  color: blue;
-}
-
 .nav-link-active {
-  color: blue;
+  color: var(--teal);
 }
 
 .user-container {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-}
-
-.icon {
+  cursor: default;
   font-size: 1.25rem;
-  color: rgb(0, 0, 0, 0.5);
+  color: var(--dark-grey);
   transition: color 0.3s ease-in-out;
 }
 
-.icon:hover {
-  color: blue;
-}
-
-p {
-  cursor: default;
-  font-size: 1.25rem;
-  color: rgb(0, 0, 0, 0.5);
+.user-container:hover {
+  color: var(--teal);
 }
 
 .user-initials {

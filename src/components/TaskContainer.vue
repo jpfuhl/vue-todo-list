@@ -11,9 +11,6 @@
 <script setup lang="ts">
 import type { TTask } from "@/types/task";
 import TaskComponent from "@/components/Task.vue";
-import { useTaskStore } from "@/stores/TaskStore";
-
-const taskStore = useTaskStore();
 
 const props = defineProps<{
   tasks: TTask[];
@@ -46,7 +43,7 @@ section {
   place-items: center;
   font-size: 2rem;
   font-weight: bold;
-  color: rgb(0, 0, 0, 0.2);
+  color: var(--grey);
 }
 
 @media (min-width: 640px) {

@@ -1,3 +1,13 @@
+:root {
+  --teal: rgba(8, 217, 214, 1);
+  --red: rgba(255, 46, 99, 1);
+  --white: rgba(255, 255, 255, 1);
+  --grey: rgba(234, 234, 234, 1);
+  --mid-grey: rgb(177, 177, 177);
+  --dark-grey: rgb(65, 72, 85);
+  --black: rgba(37, 42, 52, 1);
+}
+
 *,
 *::before,
 *::after {
@@ -17,4 +27,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--dark-grey);
+  background-color: var(--white);
 }

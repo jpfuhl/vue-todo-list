@@ -40,14 +40,20 @@ const truncatedTitle = computed(() => {
   gap: 2rem;
   padding-left: 2rem;
   padding-right: 1rem;
-  border-radius: 12px;
-  /* background: #0cebeb;
-  background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
-  background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); */
-  background: #b2fefa;
-  background: -webkit-linear-gradient(30deg, #8aecff, #b2fefa);
-  background: linear-gradient(30deg, #8aecff, #b2fefa);
-  /* box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1); */
+  border-radius: 8px;
+  background: var(--teal);
+  background: -webkit-linear-gradient(
+    135deg,
+    #a0f0f2 0%,
+    #66d9d9 50%,
+    var(--teal) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #dbf8f8 0%,
+    #a8eeee 50%,
+    var(--teal) 100%
+  );
   transition: all 0.2s ease-in-out;
 }
 
@@ -56,18 +62,36 @@ const truncatedTitle = computed(() => {
 }
 
 p {
-  color: rgb(92, 92, 92);
   cursor: default;
   max-width: 70%;
   word-break: break-all;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 input[type="checkbox"] {
-  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
   width: 1.75rem;
   height: 1.75rem;
+  border: 2px solid var(--dark-grey);
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--dark-grey);
+}
+
+input[type="checkbox"]:checked:after {
+  content: "";
+  position: absolute;
+  width: 0.5rem;
+  height: 1rem;
+  border: 2px solid var(--white);
+  border-width: 0 2px 2px 0;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .completed {
