@@ -37,7 +37,7 @@ taskStore.fetchTasks(100);
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .slide-left-enter-from {
