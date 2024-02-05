@@ -49,8 +49,10 @@ button {
   transition: all 0.1s ease-in-out;
 }
 
-button:hover {
-  cursor: pointer;
+@media (hover: hover) {
+  button:hover {
+    cursor: pointer;
+  }
 }
 
 button:active {

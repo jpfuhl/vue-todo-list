@@ -68,16 +68,18 @@ nav {
   transition: color 0.3s ease-in-out;
 }
 
-.user-container:hover {
-  color: var(--teal);
-}
-
 .user-initials {
   display: block;
 }
 
 .user-name {
   display: none;
+}
+
+@media (hover: hover) {
+  .user-container:hover {
+    color: var(--teal);
+  }
 }
 
 @media (min-width: 425px) {

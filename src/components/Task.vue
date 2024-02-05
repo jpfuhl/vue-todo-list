@@ -45,9 +45,11 @@ const truncatedTitle = computed(() => {
   transition: all 0.2s ease-in-out;
 }
 
-.card:hover {
-  scale: 1.02;
-  box-shadow: 0 4px 14px 0 rgba(255, 46, 99, 0.7);
+@media (hover: hover) {
+  .card:hover {
+    scale: 1.02;
+    box-shadow: 0 4px 14px 0 rgba(255, 46, 99, 0.7);
+  }
 }
 
 p {
