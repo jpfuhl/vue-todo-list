@@ -46,3 +46,5 @@ This will create a dist/ directory with the production-ready files.
 ## Note
 
 This project is a portfolio piece and is not intended for other contributors. If you'd like to reference this project, please attribute it to me.
+
+© Joachim Pfuhl
